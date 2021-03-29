@@ -193,9 +193,9 @@ function _init_level_select()
  x_pan = -hex_width / 2 -- + (128-hex_col_mult * 7.5) / 2
  y_pan = -hex_height * 1.25  --hex_height / 2 + (128- hex_height * 7) / 2
 
- local hexes={}
+ local hexes = {}
  for col=1, 8 do
-  hexes[col]={}
+  hexes[col] = {}
   for row=1, 8 do
    if col % 2 == 1 or row % 2 == 1 then
     hexes[col][row] = no_hex
@@ -249,7 +249,7 @@ function _init_puzzle()
   reveal_all()
  end
  _, screen.data.bombs_left = puzzle_status()
- screen.data.bees={} -- todo: beesplosion
+ screen.data.bees = {} -- todo: beesplosion
 
  -- easy but hilariously hacky
  screen.data.h_color_func = function ()
@@ -523,8 +523,8 @@ function hex_points(c, r)
   local x_offset = hex_side_length * sin(angle / 6 + 1 / 12)
   local y_offset = hex_side_length * cos(angle / 6 + 1 / 12)
 
-  local x=round(center_x + x_offset)
-  local y=round(center_y + y_offset)
+  local x = round(center_x + x_offset)
+  local y = round(center_y + y_offset)
   points[#points + 1] = {x=x, y=y}
  end
 
